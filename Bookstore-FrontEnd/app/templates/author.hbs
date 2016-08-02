@@ -1,0 +1,14 @@
+<h3>{{model.name}}</h3>
+
+<strong>Biography</strong>: Here is some randomd biography blah
+ blah blah blah blah blah blah blah blah blah blah blah blah
+  blah blah blah blah blah blah blah blah  blah blah blah blah
+   blah blah blah blah blah blah blah blah blah blah blah blah
+   end of fake bio.
+
+<h4>Published titles:</h4>
+<ul>
+  {{#each model.books as |book|}}
+    {{book-cover book=book blurBackground=(route-action "blurBackground")}}
+  {{/each}}
+</ul>

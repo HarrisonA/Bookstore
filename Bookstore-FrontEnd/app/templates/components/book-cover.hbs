@@ -1,0 +1,30 @@
+<li {{action "open"}}>
+  <strong>{{book.title}}</strong><br>
+  <em>by</em>
+  {{#link-to 'author' book.author.id class="author" }}{{book.author.name}}{{/link-to}}
+  {{!-- Note on the above line: book.author is a model, so Ember want call the
+  model() hook and therefore no question arises about reloading data. Our
+  fix is simple enough: pass in book.author.id so that model() gets called. --}}
+
+</li>
+<br>
+
+{{#if isShowingModal}}
+  {{#modal-dialog close="close" clickOutsideToClose=true}}
+
+    <div class="modal">
+      <h3>Purchase confirmation</h3>
+      You want to buy <strong>{{book.title}}</strong> by {{book.author.name}}.
+
+      <p>
+        <button {{action "close"}}>Purchase for ${{book.price}}!</button>
+      </p>
+
+      <p>
+        <em>Thank you! We will e-mail you your e-book</em>
+      </p>
+
+    </div>
+
+  {{/modal-dialog}}
+{{/if}}

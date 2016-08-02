@@ -1,0 +1,16 @@
+<button {{action 'addABook'}}>Add a new book</button>
+
+
+<ul>
+  {{#each model as |book|}}
+    {{book-cover book=book blurBackground=(route-action "blurBackground")}}
+  {{/each}}
+</ul>
+{{!--
+The above means that the component has a reference to the blurBackground function in
+the route!
+--}}
+
+{{#if showAll}}
+  <button {{action 'showAll'}}>Show All Books</button>
+{{/if}}
