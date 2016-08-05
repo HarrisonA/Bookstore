@@ -30,22 +30,22 @@ export default Ember.Route.extend({
 
   actions: {
 
-    addABook() {
-      var storeCopy = this.store;  // needed so we this.store doesn't lose its reference inside the callback
-
-      // author and book and book values are hardcoded for testing purposes
-      this.store.findRecord('author', 4).then(function(foundAuthor) {
-
-        const newBook = storeCopy.createRecord('book', {
-          title: "****** 2nd added book from Sola",
-          price: 75.00,
-          author: foundAuthor,
-          publisher: foundAuthor
-        });
-
-        newBook.save();
-      });
-    },
+    // addABook() {
+    //   var storeCopy = this.store;  // needed so we this.store doesn't lose its reference inside the callback
+    //
+    //   // author and book and book values are hardcoded for testing purposes
+    //   this.store.findRecord('author', 4).then(function(foundAuthor) {
+    //
+    //     const newBook = storeCopy.createRecord('book', {
+    //       title: "****** 2nd added book from Sola",
+    //       price: 75.00,
+    //       author: foundAuthor,
+    //       publisher: foundAuthor
+    //     });
+    //
+    //     newBook.save();
+    //   });
+    // },
     //
     showAll() {
       const total = this.controllerFor('books').get('total');
