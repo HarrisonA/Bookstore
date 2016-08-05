@@ -1,0 +1,14 @@
+<h3>Enter info for a new book</h3>
+
+<form {{ action 'submitUserBook' on="submit"}}>
+    <h5>
+      Book title{{input value=title}}<br>
+      Price {{input value=price}}
+      <br>Feature of Adding a new author and publisher is NOT availalbe yet
+      <!-- Author {{input value=author}}<br> -->
+      <!-- Publisher {{input value=publisher}}<br> -->
+      <!-- Note to add an author requires creating a new author and then getting that ID
+      *** OR *** giving the user a list of ids (from the db) for the existing authors -->
+    </h5>
+    <button type="submit">Click to add this new book</button>
+</form>
